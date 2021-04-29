@@ -8,7 +8,8 @@ import {
   ImageBackground,
   Image,
   Alert,
-  ToastAndroid
+  ToastAndroid,
+  KeyboardAvoidingView
 } from "react-native";
 import * as Permissions from "expo-permissions";
 import { BarCodeScanner } from "expo-barcode-scanner";
@@ -194,7 +195,7 @@ export default class RideScreen extends Component {
       );
     }
     return (
-      <View style={styles.container}>
+      <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <View style={styles.upperContainer}>
           <Image source={appIcon} style={styles.appIcon} />
           <Text style={styles.title}>E-Ride</Text>
@@ -234,7 +235,7 @@ export default class RideScreen extends Component {
             </Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }

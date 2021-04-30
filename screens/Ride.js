@@ -29,7 +29,8 @@ export default class RideScreen extends Component {
       hasCameraPermissions: null,
       scanned: false,
       bikeType: "",
-      userName: ""
+      userName: "",
+      bikeAssigned: ""
     };
   }
 
@@ -54,8 +55,11 @@ export default class RideScreen extends Component {
     });
   };
 
-  handleTransaction = () => {
+  handleTransaction = async () => {
     var { bikeId, userId } = this.state;
+    await this, getBikeDetails(bikeId);
+    await this.getUserDetails(userId);
+
     db.collection("bicycles")
       .doc(bikeId)
       .get()

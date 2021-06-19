@@ -57,7 +57,7 @@ export default class RideScreen extends Component {
 
   handleTransaction = async () => {
     var { bikeId, userId } = this.state;
-    await this, getBikeDetails(bikeId);
+    await this.getBikeDetails(bikeId);
     await this.getUserDetails(userId);
 
     db.collection("bicycles")
@@ -202,7 +202,7 @@ export default class RideScreen extends Component {
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <View style={styles.upperContainer}>
           <Image source={appIcon} style={styles.appIcon} />
-          <Text style={styles.title}>E-Ride</Text>
+          <Text style={styles.title}>e-ride</Text>
           <Text style={styles.subtitle}>A Eco-Friendly Ride</Text>
         </View>
         <View style={styles.lowerContainer}>
